@@ -50,14 +50,7 @@ const Spreadsheet = () => {
     },
   ]);
 
-  const onCellEdit = (
-    event: CellEditingStoppedEvent<
-      | { label: string; value: string; editable?: undefined }
-      | { label: string; value: string; editable: boolean },
-      any
-    >
-  ) => {
-    const { value } = event;
+  const onCellEdit = () => {
     const loan = rowData.find((row) => row.label === "Loan")?.value;
     const interestRate = rowData.find(
       (row) => row.label === "Interest Rate (Annual)"
