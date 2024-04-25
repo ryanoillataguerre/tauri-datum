@@ -1,14 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { invoke } from "@tauri-apps/api/tauri";
 import { AgGridReact } from "ag-grid-react"; // AG Grid Component
 import "ag-grid-community/styles/ag-grid.css"; // Mandatory CSS required by the grid
 import "ag-grid-community/styles/ag-theme-quartz.css"; // Optional Theme applied to the grid
-import {
-  CellEditingStoppedEvent,
-  ColDef,
-  ColGroupDef,
-} from "ag-grid-community";
+import { ColDef, ColGroupDef } from "ag-grid-community";
 
 const Spreadsheet = () => {
   const getPmt = async ({
