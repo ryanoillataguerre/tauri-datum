@@ -11,3 +11,12 @@ pub fn pmt(rate: f64, nper: f64, pv: f64, fv: f64) -> Result<f64, tauri::Error> 
     // Round to nearest 2nd decimal
     Ok((pmt * 100.0).round() / 100.0)
 }
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test_pmt() {
+        assert_eq!(pmt(0.0, 0.0, 0.0, 0.0).unwrap(), 0.0);
+        assert_eq!(pmt(0.06 / 12, 30 * 12, 100000, 0).unwrap(), -596.57);
+    }
+}
